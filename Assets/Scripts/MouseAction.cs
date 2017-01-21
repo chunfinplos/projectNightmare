@@ -18,7 +18,7 @@ public class MouseAction : MonoBehaviour {
     {
         RaycastHit hit;
 
-        Vector3 forward = transform.forward;
+		Vector3 forward = transform.forward;
 
         Debug.DrawRay(transform.position, forward * interactionDistance);
 
