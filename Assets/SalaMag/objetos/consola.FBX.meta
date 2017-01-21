@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 3625b23c0211da54d865baf331ef5d6b
+timeCreated: 1485031235
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ATARI 2600
+    100002: Capsule06
+    100004: cartridge 01
+    100006: ChamferBox01
+    100008: //RootNode
+    100010: Cylinder01
+    100012: Cylinder05
+    100014: Cylinder06
+    100016: Cylinder07
+    100018: Cylinder08
+    100020: Cylinder09
+    100022: Cylinder10
+    100024: Cylinder11
+    100026: Cylinder12
+    100028: Cylinder13
+    100030: Cylinder14
+    100032: Cylinder16
+    100034: Cylinder20
+    100036: Cylinder28
+    100038: Cylinder29
+    100040: Spring05
+    100042: Spring06
+    100044: Spring07
+    100046: Spring08
+    100048: Spring09
+    100050: Spring10
+    100052: sticker
+    100054: TORNILLOS
+    100056: Tube01
+    100058: Tube02
+    100060: Tube03
+    100062: Tube04
+    100064: Tube05
+    100066: Tube06
+    100068: Tube07
+    400000: ATARI 2600
+    400002: Capsule06
+    400004: cartridge 01
+    400006: ChamferBox01
+    400008: //RootNode
+    400010: Cylinder01
+    400012: Cylinder05
+    400014: Cylinder06
+    400016: Cylinder07
+    400018: Cylinder08
+    400020: Cylinder09
+    400022: Cylinder10
+    400024: Cylinder11
+    400026: Cylinder12
+    400028: Cylinder13
+    400030: Cylinder14
+    400032: Cylinder16
+    400034: Cylinder20
+    400036: Cylinder28
+    400038: Cylinder29
+    400040: Spring05
+    400042: Spring06
+    400044: Spring07
+    400046: Spring08
+    400048: Spring09
+    400050: Spring10
+    400052: sticker
+    400054: TORNILLOS
+    400056: Tube01
+    400058: Tube02
+    400060: Tube03
+    400062: Tube04
+    400064: Tube05
+    400066: Tube06
+    400068: Tube07
+    2300000: Capsule06
+    2300002: cartridge 01
+    2300004: ChamferBox01
+    2300006: Cylinder01
+    2300008: Cylinder05
+    2300010: Cylinder06
+    2300012: Cylinder07
+    2300014: Cylinder08
+    2300016: Cylinder09
+    2300018: Cylinder10
+    2300020: Cylinder11
+    2300022: Cylinder12
+    2300024: Cylinder13
+    2300026: Cylinder14
+    2300028: Cylinder16
+    2300030: Cylinder20
+    2300032: Cylinder28
+    2300034: Cylinder29
+    2300036: Spring05
+    2300038: Spring06
+    2300040: Spring07
+    2300042: Spring08
+    2300044: Spring09
+    2300046: Spring10
+    2300048: sticker
+    2300050: Tube01
+    2300052: Tube02
+    2300054: Tube03
+    2300056: Tube04
+    2300058: Tube05
+    2300060: Tube06
+    2300062: Tube07
+    3300000: Capsule06
+    3300002: cartridge 01
+    3300004: ChamferBox01
+    3300006: Cylinder01
+    3300008: Cylinder05
+    3300010: Cylinder06
+    3300012: Cylinder07
+    3300014: Cylinder08
+    3300016: Cylinder09
+    3300018: Cylinder10
+    3300020: Cylinder11
+    3300022: Cylinder12
+    3300024: Cylinder13
+    3300026: Cylinder14
+    3300028: Cylinder16
+    3300030: Cylinder20
+    3300032: Cylinder28
+    3300034: Cylinder29
+    3300036: Spring05
+    3300038: Spring06
+    3300040: Spring07
+    3300042: Spring08
+    3300044: Spring09
+    3300046: Spring10
+    3300048: sticker
+    3300050: Tube01
+    3300052: Tube02
+    3300054: Tube03
+    3300056: Tube04
+    3300058: Tube05
+    3300060: Tube06
+    3300062: Tube07
+    4300000: cartridge 01
+    4300002: sticker
+    4300004: Cylinder16
+    4300006: Capsule06
+    4300008: Cylinder20
+    4300010: Cylinder12
+    4300012: Cylinder14
+    4300014: Cylinder13
+    4300016: Cylinder11
+    4300018: Cylinder29
+    4300020: Tube01
+    4300022: Cylinder01
+    4300024: Cylinder28
+    4300026: Tube02
+    4300028: Tube03
+    4300030: Cylinder05
+    4300032: Cylinder06
+    4300034: Cylinder07
+    4300036: Cylinder08
+    4300038: Tube04
+    4300040: Cylinder09
+    4300042: Tube05
+    4300044: Tube06
+    4300046: Cylinder10
+    4300048: Tube07
+    4300050: Spring07
+    4300052: Spring10
+    4300054: Spring09
+    4300056: Spring08
+    4300058: Spring06
+    4300060: Spring05
+    4300062: ChamferBox01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
