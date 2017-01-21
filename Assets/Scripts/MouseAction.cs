@@ -55,6 +55,11 @@ public class MouseAction : MonoBehaviour {
                             ps.Play();
                         }
 
+                        DoorScript ds = hit.collider.gameObject.GetComponent<DoorScript>();
+
+                        if (ds != null)
+                            ds.Move();
+
                     }
                 }
                 else
