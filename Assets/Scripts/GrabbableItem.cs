@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GrabbableItem : MonoBehaviour {
 
-    public bool Grabbed = false;
 
+    public string Id;
+    public bool Grabbed = false;
     private GameObject player = null;
     private Rigidbody rb;
 

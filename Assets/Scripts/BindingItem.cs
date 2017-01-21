@@ -6,14 +6,15 @@ public class BindingItem : MonoBehaviour {
 
     public GrabbableItem myItem;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        myItem = other.GetComponent<GrabbableItem>();
+        GrabbableItem aux = other.GetComponent<GrabbableItem>();
 
-        if(myItem!=null)
+        if(aux!=null)
         {
-            if (!myItem.Grabbed)
+            if (!aux.Grabbed)
             {
+                myItem = aux;
                 other.transform.position = transform.position;
                 other.transform.rotation = transform.rotation;
             }
@@ -21,7 +22,10 @@ public class BindingItem : MonoBehaviour {
     }
     private void OnTriggerExit(Collider other)
     {
-        if (myItem != null)
-            myItem = null;
+        if (other.GetComponent<GrabbableItem>())
+        {
+            if (myItem != null)
+                myItem = null;
+        }
     }
 }

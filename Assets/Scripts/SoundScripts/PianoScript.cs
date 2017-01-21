@@ -5,13 +5,23 @@ using UnityEngine;
 public class PianoScript : MonoBehaviour {
 
 
+    private bool playing = false;
+
     public void Play()
     {
-        BindingItem [] item = GetComponentsInChildren<BindingItem>();
-
-        /*for(int i = 0; i < item.Length; i++)
+        if (playing == false)
         {
+            playing = true;
 
-        }*/
+            BindingItem[] item = GetComponentsInChildren<BindingItem>();
+
+            if (item[0].myItem.Id == "Peon")
+            {
+                print("Exito");
+            }
+
+            playing = false;
+        }
+        
     }
 }

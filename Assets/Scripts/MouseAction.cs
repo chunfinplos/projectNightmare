@@ -34,7 +34,7 @@ public class MouseAction : MonoBehaviour {
                 if (Physics.Raycast(transform.position, forward, out hit, interactionDistance))
                 {
                     imagen.color = Color.green;
-                    print("Found an object - distance: " + hit.collider.gameObject.ToString());
+                    //print("Found an object - distance: " + hit.collider.gameObject.ToString());
 
                     if (Input.GetButtonDown("Accion"))
                     {
