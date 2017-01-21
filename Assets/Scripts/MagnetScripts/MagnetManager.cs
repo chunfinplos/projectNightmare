@@ -122,7 +122,8 @@ public class MagnetManager : MonoBehaviour {
             }
             else
             {
-                //Lanzar Bola Arriba
+                Destroy(bol);
+                //Lanzar Script de morir
             }
         }
     }

@@ -25,8 +25,11 @@ public class BotonPotencia : MonoBehaviour {
         {
             if (this.gameObject.name == "Subir Potencia Iman " + (i))
             {
-                if(mg.GetComponent<MagnetManager>().arrayPosBotones[i] < 4)
-                    mg.GetComponent<MagnetManager>().arrayPosBotones[i] += 1; 
+                if (mg.GetComponent<MagnetManager>().arrayPosBotones[i] < 4)
+                {
+                    mg.GetComponent<MagnetManager>().arrayPosBotones[i] += 1;
+                    print("Pulsacion arriba");
+                }
             }
         }
         for (int i = 1; i <= botonesBajar.Length; i++)
@@ -34,7 +37,10 @@ public class BotonPotencia : MonoBehaviour {
             if (this.gameObject.name == "Bajar Potencia Iman " + (i))
             {
                 if (mg.GetComponent<MagnetManager>().arrayPosBotones[i] > 0)
+                {
                     mg.GetComponent<MagnetManager>().arrayPosBotones[i] -= 1;
+                    print("Pulsacion Abajo");
+                }
             }
         }
 
