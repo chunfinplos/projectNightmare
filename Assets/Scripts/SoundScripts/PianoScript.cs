@@ -15,7 +15,7 @@ public class PianoScript : MonoBehaviour {
 
             BindingItem[] item = GetComponentsInChildren<BindingItem>();
 
-            if (item[0].name == "Caballo" && item[1].name == "Alfil" && item[2].name == "Torre" &&
+            if (item[0].name == "Rey" && item[1].name == "Caballo" && item[2].name == "Torre" &&
                 item[3].name == "Reina" && item[4].name == "Rey")
             {
                 print("Exito");
