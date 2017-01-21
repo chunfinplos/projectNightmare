@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabbableItem : MonoBehaviour {
 
     public bool Grabbed = false;
+    public bool primerGrab = false;
     private GameObject player = null;
     private Rigidbody rb;
 
@@ -23,9 +24,10 @@ public class GrabbableItem : MonoBehaviour {
         }
         else
         {
-            this.transform.parent = null;
-            rb.useGravity = true;
-            rb.freezeRotation = false;
+                this.transform.parent = null;
+                rb.useGravity = true;
+                rb.freezeRotation = false;
+            
         }
     }
 
@@ -33,7 +35,6 @@ public class GrabbableItem : MonoBehaviour {
     {
         this.player = player;
         Grabbed = true;
-        
     }
 
     public void Drop()

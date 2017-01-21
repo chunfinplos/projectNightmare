@@ -43,6 +43,8 @@ public class MouseAction : MonoBehaviour {
                             print("Boton Apretado");
                             hit.collider.gameObject.GetComponent<BotonPotencia>().Accion();
                         }
+                        else if (hit.collider.gameObject.tag == "Cajon")
+                            hit.collider.gameObject.GetComponent<AbrirCajon>().Accion();
                         gi = hit.collider.gameObject.GetComponent<GrabbableItem>();
                         if (gi != null)
                         {
