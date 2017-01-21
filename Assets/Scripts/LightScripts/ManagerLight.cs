@@ -13,6 +13,11 @@ public class ManagerLight : MonoBehaviour {
 
 	public void attachLight(string name) {
 		Debug.Log (name);
+		StartCoroutine(delay());
+	}
+
+	IEnumerator delay() {
+		yield return new WaitForSeconds(3);
 		if(index < lights.Length) {
 			lights [index].SetActive (true);
 		}
