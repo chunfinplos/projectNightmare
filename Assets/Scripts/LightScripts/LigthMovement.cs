@@ -12,14 +12,21 @@ public class LigthMovement : MonoBehaviour {
 	public Transform bind;
 	private bool isAttached = false;
 
+	public float timeDelay = 3;
+	private float tempDelay = 0;
+
 	void Start () {}
 
 	void Update () {
+		tempDelay += Time.deltaTime;
 		if (!isAttached) {
 			if (overlap) {
+				tempDelay = 0;
 				transform.Translate (direction * Time.deltaTime, Space.World);
 			} else {
-				transform.position = Vector3.MoveTowards (transform.position, center.transform.position, speed * Time.deltaTime);
+				if(tempDelay >= timeDelay) {
+					transform.position = Vector3.MoveTowards (transform.position, center.transform.position, speed * Time.deltaTime);
+				}
 			}
 		} else {
 			transform.position = Vector3.MoveTowards (transform.position, bind.transform.position, speed * Time.deltaTime);

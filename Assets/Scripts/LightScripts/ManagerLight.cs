@@ -6,7 +6,7 @@ public class ManagerLight : MonoBehaviour {
 
 	public GameObject[] lights = new GameObject[5];
 	private int index = 1;
-	public float timeDelay = 1;
+	public float timeDelay = 5;
 	
 	void Start () {}
 
