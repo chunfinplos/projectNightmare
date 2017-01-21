@@ -16,8 +16,9 @@ public class MouseAction : MonoBehaviour {
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
-            print("Found an object - distance: " + hit.distance);
+        if(Input.GetButtonUp("Accion"))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
+                print("Found an object - distance: " + hit.distance);
 
         Debug.DrawRay(transform.position, transform.forward , Color.green);
     }
