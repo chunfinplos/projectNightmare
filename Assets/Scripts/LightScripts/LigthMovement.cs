@@ -7,16 +7,18 @@ public class LigthMovement : MonoBehaviour {
 	private bool overlap = false;
 	public float speed = 5;
 	private Vector3 direction;
+	public float delay = 4;
+	private float timeDelay = 0;
+	private bool isStopped = true;
 
 	public Transform center;
 
-	// Use this for initialization
 	void Start () {}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (overlap) {
-			transform.Translate(direction * Time.deltaTime);
+			Debug.Log (direction);
+			transform.Translate(direction * Time.deltaTime, Space.World);
 		} else {
 			transform.position = Vector3.MoveTowards (transform.position, center.transform.position, speed * Time.deltaTime);
 		}
@@ -24,14 +26,11 @@ public class LigthMovement : MonoBehaviour {
 
 	void OnTriggerStay(Collider other) {
 		float x = transform.position.x - other.transform.position.x;
-		float y = transform.position.y - other.transform.position.y;
-		direction.Set (x,y,0);
+		float z = transform.position.z - other.transform.position.z;
+		direction.Set (x,0,z);
 	}
-
+		
 	void OnTriggerEnter(Collider other) {
-		float x = transform.position.x - other.transform.position.x;
-		float y = transform.position.y - other.transform.position.y;
-		direction.Set (x,y,0);
 		overlap = true;
 	}
 
