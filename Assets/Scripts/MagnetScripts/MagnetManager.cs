@@ -18,17 +18,21 @@ public class MagnetManager : MonoBehaviour {
     private Vector3 resta;
 
     [SerializeField]
-    private ushort[] arrayPosBotones = new ushort[6];
+    private int[] arrayPosBotones = new int[6];
 
     [SerializeField]
-    private ushort[] posCorrectas = new ushort[6];    
+    private int[] posCorrectas = new int[6];
+    [SerializeField]
+    private GameObject[] situacionesFallidas = new GameObject[20];
+
+    public bool esCorrecto = true;
 
     public bool bolaEnMovimiento = false;
     [SerializeField]
     private int velMov;
 
     [SerializeField]
-    private ushort i = 0;
+    private int i = 0, j;
 
     public bool BolaEnMovimiento
     {
@@ -45,64 +49,92 @@ public class MagnetManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        posCorrectas[0] = 3;
-        posCorrectas[1] = 1;
-        posCorrectas[2] = 0;
-        posCorrectas[3] = 4;
-        posCorrectas[4] = 2;
-        arrayPosBotones[0] = 3;
+        posCorrectas[0] = 0;
+        posCorrectas[1] = 3;
+        posCorrectas[2] = 1;
+        posCorrectas[3] = 0;
+        posCorrectas[4] = 4;
+        posCorrectas[5] = 2;
+        arrayPosBotones[0] = 0;
         arrayPosBotones[1] = 1;
-        arrayPosBotones[2] = 0;
-        arrayPosBotones[3] = 4;
-        arrayPosBotones[4] = 2;
+        arrayPosBotones[2] = 1;
+        arrayPosBotones[3] = 0;
+        arrayPosBotones[4] = 4;
+        arrayPosBotones[5] = 2;
         BolaEnMovimiento = false;
         lanzarBola();
     }
 
     // Update is called once per frame
     void Update() {
-
-        if (i < 5)
+        if (bol != null)
         {
-            if (!BolaEnMovimiento)
+            if (i < 5)
             {
-                if (arrayPosBotones[i] == posCorrectas[i])
+                if (!BolaEnMovimiento)
                 {
-                    BolaEnMovimiento = true;
-                    i++;
-                    resta = imanes[i].transform.position - bol.transform.position;
+                    if (arrayPosBotones[i] == posCorrectas[i])
+                    {
+
+                        esCorrecto = true;
+                        BolaEnMovimiento = true;
+                        i++;
+                        resta = imanes[i].transform.position - bol.transform.position;
+                        if (i == 2 && arrayPosBotones[5] != posCorrectas[5])
+                            resta = imanes[5].transform.position - bol.transform.position;
+                    }
+                    else
+                    {
+                        esCorrecto = false;
+                        bolaEnMovimiento = true;
+                        if (arrayPosBotones[i] != posCorrectas[i])
+                        {
+                            switch (arrayPosBotones[i])
+                            {
+                                case 0:
+                                    j = i * 4;
+                                    break;
+                                case 1:
+                                    j = i * 4 + 1;
+                                    break;
+                                case 2:
+                                    j = i * 4 + 2;
+                                    break;
+                                case 3:
+                                    j = i * 4 + 3;
+                                    break;
+                                case 4:
+                                    j = i * 4 + 4;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            j -= 4;
+                            resta = situacionesFallidas[j].transform.position - bol.transform.position;
+                            i = 0;
+                        }
+                    }
                 }
                 else
                 {
-                    i = 0;
-                    return;
+                    viajeIman();
                 }
             }
             else
             {
-                viajeIman(imanes[i]);
+                //Lanzar Bola Arriba
             }
         }
-        else
-        {
-            //Lanzar Bola Arriba
-        }
-        
     }
-
 
     private void lanzarBola()
     {
         bol = Instantiate(bola, platLanzamiento.transform.position, platLanzamiento.transform.rotation);
     }
 
-    private void viajeIman(GameObject destino)
+    private void viajeIman()
     {
         bol.transform.Translate(resta * Time.deltaTime/3);
     }
-
-
-
-
 
 }
