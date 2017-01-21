@@ -7,7 +7,7 @@ public class MouseAction : MonoBehaviour {
 
 
     [SerializeField]
-    private float interactionDistance = 3f;
+    private float interactionDistance = 1.7f;
 
     [SerializeField]
     private Image imagen;
@@ -43,6 +43,13 @@ public class MouseAction : MonoBehaviour {
                         {
                             gi.Grab(gameObject);
                         }
+
+                        PianoScript ps = hit.collider.gameObject.GetComponent<PianoScript>();
+                        if (ps != null)
+                        {
+                            ps.Play();
+                        }
+
                     }
 
                 }

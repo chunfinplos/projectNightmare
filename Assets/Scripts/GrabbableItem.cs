@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GrabbableItem : MonoBehaviour {
 
-    GameObject player = null;
-    Rigidbody rb;
+    public bool Grabbed = false;
+
+    private GameObject player = null;
+    private Rigidbody rb;
+
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -16,6 +19,7 @@ public class GrabbableItem : MonoBehaviour {
         this.player = player;
         this.transform.parent = player.transform;
         rb.isKinematic = true;
+        Grabbed = true;
         
     }
 
@@ -24,5 +28,6 @@ public class GrabbableItem : MonoBehaviour {
         this.transform.parent = null;
         this.player = null;
         rb.isKinematic = false;
+        Grabbed = false;
     }
 }
