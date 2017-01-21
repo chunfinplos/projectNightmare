@@ -7,22 +7,100 @@ public class PianoScript : MonoBehaviour {
 
     private bool playing = false;
 
+    /*public AudioClip sound1;
+    public AudioClip sound2;
+    public AudioClip sound3;
+    public AudioClip sound4;
+    public AudioClip sound5;*/
+
+
+    public AudioSource source;
+    public AudioClip [] clips = new AudioClip[5];
+    public AudioClip failClip;
+    public AudioClip finalClip;
+
+    private bool[] results = new bool[5];
+    private string[] esperados = new string[5];
+
+    private bool destino;
+
+    private void Start()
+    {
+        esperados[0] = "rey";
+        esperados[1] = "caballo";
+        esperados[2] = "torre";
+        esperados[3] = "reina";
+        esperados[4] = "rey";
+    }
+
     public void Play()
     {
+        source = gameObject.GetComponent<AudioSource>();
+
         if (playing == false)
         {
             playing = true;
-
             BindingItem[] item = GetComponentsInChildren<BindingItem>();
 
-            if (item[0].name == "Rey" && item[1].name == "Caballo" && item[2].name == "Torre" &&
-                item[3].name == "Reina" && item[4].name == "Rey")
+            for(int i = 0; i < 5; i++)
             {
-                print("Exito");
+                if(item[i].myItem!=null)
+                {
+                    if (item[i].myItem.name == esperados[i])
+                        results[i] = true;
+                    else
+                        results[i] = false;
+                }
+                else
+                {
+                    results[i] = false;
+                }
+
+            }
+
+            
+
+            destino = true;
+            for(int i = 0; i < 5; i++)
+            {
+                if (results[i] == false)
+                    destino = false;
             }
 
             playing = false;
+
+            if (destino == true)
+            {
+                Debug.Log("CONGRATULATIONS");
+                source.clip = finalClip;
+                source.Play();
+            }
+            else
+            {
+                Debug.Log("FAIL");
+                StartCoroutine(PlaySong());
+            }
+
         }
-        
+    }
+
+    IEnumerator PlaySong()
+    {
+        int index = 0;
+
+        while(true)
+        {
+            if(!source.isPlaying)
+            {
+                if (results[index])
+                    source.clip = clips[index];
+                else
+                    source.clip = failClip; 
+                index++;
+                source.Play();
+            }
+
+            yield return null;
+        }
     }
 }
