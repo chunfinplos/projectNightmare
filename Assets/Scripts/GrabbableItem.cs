@@ -5,7 +5,6 @@ using UnityEngine;
 public class GrabbableItem : MonoBehaviour {
 
     public bool Grabbed = false;
-    public bool primerGrab = false;
     private GameObject player = null;
     private Rigidbody rb;
 

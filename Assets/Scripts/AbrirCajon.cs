@@ -10,12 +10,12 @@ public class AbrirCajon : MonoBehaviour {
     {
         if (estaAbierto)
         {
-            transform.Translate(new Vector3(0, 0.2f, 0));
+            transform.Translate(new Vector3(1, 0, 0));
             estaAbierto = false;
         }
         else
         {
-            transform.Translate(new Vector3(0, -0.2f, 0));
+            transform.Translate(new Vector3(-1, 0, 0));
             estaAbierto = true;
         }
     }
