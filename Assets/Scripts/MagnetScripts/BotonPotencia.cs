@@ -11,22 +11,22 @@ public class BotonPotencia : MonoBehaviour {
     
     private GameObject[] botonesBajar;
 
-    void Accion()
+    public void Accion()
     {
         botonesSubir = GameObject.FindGameObjectsWithTag("BotonesSubirImanes");
         botonesBajar = GameObject.FindGameObjectsWithTag("BotonesBajarImanes");
 
-        for (int i = 0; i<botonesSubir.Length;i++)
+        for (int i = 1; i<=botonesSubir.Length;i++)
         {
-            if (this.gameObject.name == "Subir Potencia Iman " + (i+1))
+            if (this.gameObject.name == "Subir Potencia Iman " + (i))
             {
                 if(mg.GetComponent<MagnetManager>().arrayPosBotones[i] < 4)
                     mg.GetComponent<MagnetManager>().arrayPosBotones[i] += 1; 
             }
         }
-        for (int i = 0; i < botonesBajar.Length; i++)
+        for (int i = 1; i <= botonesBajar.Length; i++)
         {
-            if (this.gameObject.name == "Bajar Potencia Iman " + (i+1))
+            if (this.gameObject.name == "Bajar Potencia Iman " + (i))
             {
                 if (mg.GetComponent<MagnetManager>().arrayPosBotones[i] > 0)
                     mg.GetComponent<MagnetManager>().arrayPosBotones[i] -= 1;
