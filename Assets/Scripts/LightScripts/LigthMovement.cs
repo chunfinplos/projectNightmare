@@ -36,8 +36,9 @@ public class LigthMovement : MonoBehaviour {
 		
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Finish") {
-			Debug.Log (other.tag);
 			isAttached = true;
+			ManagerLight mgr = GameObject.Find("Managers").GetComponent<ManagerLight>();
+			mgr.attachLight (name);
 		}
 		overlap = true;
 	}
