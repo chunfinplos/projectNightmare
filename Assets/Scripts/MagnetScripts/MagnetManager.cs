@@ -18,7 +18,7 @@ public class MagnetManager : MonoBehaviour {
     private Vector3 resta;
 
     [SerializeField]
-    private int[] arrayPosBotones = new int[6];
+    public int[] arrayPosBotones = new int[6];
 
     [SerializeField]
     private int[] posCorrectas = new int[6];
