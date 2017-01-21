@@ -7,7 +7,7 @@ public class MouseAction : MonoBehaviour {
 
 
     [SerializeField]
-    private float interactionDistance = 1.7f;
+    private float interactionDistance = 2f;
 
     [SerializeField]
     private Image imagen;
@@ -56,7 +56,6 @@ public class MouseAction : MonoBehaviour {
                         }
 
                     }
-
                 }
                 else
                 {
