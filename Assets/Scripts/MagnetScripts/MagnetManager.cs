@@ -56,11 +56,11 @@ public class MagnetManager : MonoBehaviour {
         posCorrectas[4] = 4;
         posCorrectas[5] = 2;
         arrayPosBotones[0] = 0;
-        arrayPosBotones[1] = 3;
-        arrayPosBotones[2] = 1;
+        arrayPosBotones[1] = 0;
+        arrayPosBotones[2] = 0;
         arrayPosBotones[3] = 0;
-        arrayPosBotones[4] = 4;
-        arrayPosBotones[5] = 2;
+        arrayPosBotones[4] = 0;
+        arrayPosBotones[5] = 0;
         BolaEnMovimiento = false;
     }
 
