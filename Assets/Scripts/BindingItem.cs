@@ -17,6 +17,7 @@ public class BindingItem : MonoBehaviour {
                 myItem = aux;
                 other.transform.position = transform.position;
                 other.transform.rotation = transform.rotation;
+                other.transform.Rotate(90, 0, 0);
             }
         }
     }
