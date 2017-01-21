@@ -6,6 +6,7 @@ public class ManagerLight : MonoBehaviour {
 
 	public GameObject[] lights = new GameObject[5];
 	private int index = 1;
+	public float timeDelay = 1;
 	
 	void Start () {}
 
@@ -17,7 +18,7 @@ public class ManagerLight : MonoBehaviour {
 	}
 
 	IEnumerator delay() {
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(timeDelay);
 		if(index < lights.Length) {
 			lights [index].SetActive (true);
 		}
