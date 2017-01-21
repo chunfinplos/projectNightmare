@@ -62,7 +62,6 @@ public class MagnetManager : MonoBehaviour {
         arrayPosBotones[4] = 4;
         arrayPosBotones[5] = 2;
         BolaEnMovimiento = false;
-        lanzarBola();
     }
 
     // Update is called once per frame
@@ -112,6 +111,7 @@ public class MagnetManager : MonoBehaviour {
                             j -= 4;
                             resta = situacionesFallidas[j].transform.position - bol.transform.position;
                             i = 0;
+                            j = 0;
                         }
                     }
                 }
@@ -127,7 +127,7 @@ public class MagnetManager : MonoBehaviour {
         }
     }
 
-    private void lanzarBola()
+    public void lanzarBola()
     {
         bol = Instantiate(bola, platLanzamiento.transform.position, platLanzamiento.transform.rotation);
     }

@@ -38,7 +38,7 @@ public class MouseAction : MonoBehaviour {
 
                     if (Input.GetButtonDown("Accion"))
                     {
-                        if (hit.collider.gameObject.tag == "BotonesSubirImanes" || hit.collider.gameObject.tag == "BotonesBajarImanes")
+                        if (hit.collider.gameObject.tag == "BotonesSubirImanes" || hit.collider.gameObject.tag == "BotonesBajarImanes" || hit.collider.gameObject.tag == "Palanca")
                         {
                             print("Boton Apretado");
                             hit.collider.gameObject.GetComponent<BotonPotencia>().Accion();

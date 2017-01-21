@@ -13,6 +13,11 @@ public class BotonPotencia : MonoBehaviour {
 
     public void Accion()
     {
+        if (this.gameObject.tag == "Palanca")
+        {
+            mg.GetComponent<MagnetManager>().lanzarBola();
+            print("Bola Lanzada");
+        }
         botonesSubir = GameObject.FindGameObjectsWithTag("BotonesSubirImanes");
         botonesBajar = GameObject.FindGameObjectsWithTag("BotonesBajarImanes");
 
@@ -32,5 +37,7 @@ public class BotonPotencia : MonoBehaviour {
                     mg.GetComponent<MagnetManager>().arrayPosBotones[i] -= 1;
             }
         }
+
+        
     }
 }
