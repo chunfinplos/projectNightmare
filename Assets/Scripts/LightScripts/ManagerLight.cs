@@ -21,6 +21,9 @@ public class ManagerLight : MonoBehaviour {
 		yield return new WaitForSeconds(timeDelay);
 		if(index < lights.Length) {
 			lights [index].SetActive (true);
+
+			AudioSource audio = GetComponent<AudioSource>();
+			audio.Play ();
 		}
 		index++;
 	}
