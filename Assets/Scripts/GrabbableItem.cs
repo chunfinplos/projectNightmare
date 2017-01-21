@@ -8,6 +8,8 @@ public class GrabbableItem : MonoBehaviour {
     private GameObject player = null;
     private Rigidbody rb;
 
+    
+
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
