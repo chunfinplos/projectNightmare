@@ -9,7 +9,7 @@ public class LigthMovement : MonoBehaviour {
 	private Vector3 direction;
 
 	public Transform center;
-	public Transform bind;
+	public GameObject bind;
 	private bool isAttached = false;
 
 	public float timeDelay = 3;
@@ -34,7 +34,7 @@ public class LigthMovement : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other) {
-		if (!isAttached) {
+		if (!isAttached && other.tag == "Player") {
 			float x = transform.position.x - other.transform.position.x;
 			float z = transform.position.z - other.transform.position.z;
 			direction.Set (x, 0, z);
@@ -42,15 +42,19 @@ public class LigthMovement : MonoBehaviour {
 	}
 		
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Finish") {
+		if (other.gameObject == bind) {
+			Debug.Log ("Finish");
 			isAttached = true;
 			ManagerLight mgr = GameObject.Find("Managers").GetComponent<ManagerLight>();
 			mgr.attachLight (name);
+		} else if(other.tag == "Player") {
+			overlap = true;
 		}
-		overlap = true;
 	}
 
 	void OnTriggerExit(Collider other) {
-		overlap = false;
+		if(other.tag == "Player") {
+			overlap = false;
+		}
 	}
 }
