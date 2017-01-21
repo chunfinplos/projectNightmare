@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GrabbableItem : MonoBehaviour {
 
-
-    public string Id;
     public bool Grabbed = false;
     private GameObject player = null;
     private Rigidbody rb;
@@ -15,20 +13,32 @@ public class GrabbableItem : MonoBehaviour {
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
+    private void FixedUpdate()
+    {
+        if(Grabbed)
+        {
+            this.transform.parent = player.transform;
+            rb.useGravity = false;
+            rb.freezeRotation = true;
+        }
+        else
+        {
+            this.transform.parent = null;
+            rb.useGravity = true;
+            rb.freezeRotation = false;
+        }
+    }
+
     public void Grab(GameObject player)
     {
         this.player = player;
-        this.transform.parent = player.transform;
-        rb.isKinematic = true;
         Grabbed = true;
         
     }
 
     public void Drop()
     {
-        this.transform.parent = null;
         this.player = null;
-        rb.isKinematic = false;
         Grabbed = false;
     }
 }

@@ -6,7 +6,7 @@ public class BindingItem : MonoBehaviour {
 
     public GrabbableItem myItem;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         GrabbableItem aux = other.GetComponent<GrabbableItem>();
 
