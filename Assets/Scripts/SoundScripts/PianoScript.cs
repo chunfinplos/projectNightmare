@@ -72,6 +72,9 @@ public class PianoScript : MonoBehaviour {
             if (destino == true)
             {
                 Debug.Log("CONGRATULATIONS");
+				Fade fade = GetComponent<Fade> ();
+				fade.StartFade ();
+
                 source.clip = finalClip;
                 source.Play();
             }

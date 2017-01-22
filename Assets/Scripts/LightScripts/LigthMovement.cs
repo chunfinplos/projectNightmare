@@ -45,7 +45,7 @@ public class LigthMovement : MonoBehaviour {
 		if (other.gameObject == bind) {
 			Debug.Log ("Finish");
 			isAttached = true;
-			ManagerLight mgr = GameObject.Find("Managers").GetComponent<ManagerLight>();
+			ManagerLight mgr = GameObject.Find("SalaLuces").GetComponent<ManagerLight>();
 			mgr.attachLight (name);
 		} else if(other.tag == "Player") {
 			overlap = true;

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class MagnetManager : MonoBehaviour {
 
@@ -16,6 +18,9 @@ public class MagnetManager : MonoBehaviour {
     private GameObject bol;
 
     private Vector3 resta;
+
+	[SerializeField]
+	Text estadoImanes;
 
     [SerializeField]
     public int[] arrayPosBotones = new int[6];
@@ -79,6 +84,7 @@ public class MagnetManager : MonoBehaviour {
                         BolaEnMovimiento = true;
                         i++;
                         resta = imanes[i].transform.position - bol.transform.position;
+						print ("Yendo hacia iman "+ imanes[i]);
                         if (i == 2 && arrayPosBotones[5] != posCorrectas[5])
                             resta = imanes[5].transform.position - bol.transform.position;
                     }
@@ -111,7 +117,6 @@ public class MagnetManager : MonoBehaviour {
                             j -= 4;
                             resta = situacionesFallidas[j].transform.position - bol.transform.position;
                             i = 0;
-                            j = 0;
                         }
                     }
                 }
@@ -123,19 +128,23 @@ public class MagnetManager : MonoBehaviour {
             else
             {
                 Destroy(bol);
-                //Lanzar Script de morir
+				estadoImanes.text = "";
+				Fade fade = GetComponent<Fade> ();
+				fade.StartFade();
             }
         }
     }
 
     public void lanzarBola()
     {
+		estadoImanes.text = "El estado de los imanes es: " +arrayPosBotones[1]+" "+ arrayPosBotones[2]+" "+arrayPosBotones[3]+" "+arrayPosBotones[4]+" "+arrayPosBotones[5];
         bol = Instantiate(bola, platLanzamiento.transform.position, platLanzamiento.transform.rotation);
     }
 
     private void viajeIman()
     {
-        bol.transform.Translate(resta * Time.deltaTime/3);
+		bol.transform.Translate(resta * Time.deltaTime/3,Space.World);
+
     }
 
 }
