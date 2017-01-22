@@ -28,7 +28,7 @@ public class ManagerLight : MonoBehaviour {
             //if (contador >= fade.aFadeInTime)
             //{
                 RoomManager.LuzCompleto = true;
-                player.transform.position = new Vector3(-0.14f, 0.75f, 0.38f);
+                //player.transform.position = new Vector3(-0.14f, 0.75f, 0.38f);
             //}
         }
 

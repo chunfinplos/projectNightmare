@@ -18,7 +18,7 @@ public class CanvasZoom : MonoBehaviour {
         if(this.transform.position.z > -12)
         this.transform.Translate(0,0, -1 * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
-            SceneManager.LoadScene("MainMenu");
+			Application.Quit();
 
 
     }
