@@ -36,7 +36,7 @@ public class PianoScript : MonoBehaviour {
         if(destino && RoomManager.MusicaCompleto == false)
         {
             contador += Time.deltaTime;
-            if(contador>= fade.aFadeInTime)
+            if(contador>= 5)
             {
                 //source.clip = finalClip; //CAMBIAR POR CANCION ORIGINAL DEL JUEGO
                 //source.Play();

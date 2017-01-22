@@ -19,7 +19,6 @@ public class MagnetManager : MonoBehaviour {
 
     private Vector3 resta;
 
-    private float contador = 0;
 
     public GameObject player;
 
@@ -140,19 +139,16 @@ public class MagnetManager : MonoBehaviour {
 				estadoImanes.text = "";
                 completo = true;
 
+				print ("Primera entrada");
                 if (completo)
                 {
-                    if(contador == 0)
-                        fade.StartFade();
-                    
+					print ("Segunda entrada");
 
-                    contador += Time.deltaTime;
-                    if (contador >= fade.aFadeInTime)
-                    {
+                    
+						print ("Tercera entrada");
                         RoomManager.MagnetismoCompleto = true;
-                        player.transform.position = new Vector3(-0.14f, 0.75f, 0.38f);
                         completo = false;
-                    }
+                    
 
                 }
             }

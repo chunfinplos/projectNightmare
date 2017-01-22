@@ -10,9 +10,12 @@ public class ManagerLight : MonoBehaviour {
 	public float timeDelay = 5;
 	private bool finish = false;
 
-    private float contador=0;
+    //private float contador=0;
 
-	void Start () {}
+	void Start () {
+		Fade fade = GetComponent<Fade>();
+		fade.StartFade();
+	}
 
 	void Update () {
         if (finish && RoomManager.LuzCompleto == false)
@@ -21,12 +24,12 @@ public class ManagerLight : MonoBehaviour {
             Fade fade = GetComponent<Fade>();
             fade.StartFade();
 
-            contador += Time.deltaTime;
-            if (contador >= fade.aFadeInTime)
-            {
-                RoomManager.MusicaCompleto = true;
+            //contador += Time.deltaTime;
+            //if (contador >= fade.aFadeInTime)
+            //{
+                RoomManager.LuzCompleto = true;
                 player.transform.position = new Vector3(-0.14f, 0.75f, 0.38f);
-            }
+            //}
         }
 
     }
@@ -38,7 +41,7 @@ public class ManagerLight : MonoBehaviour {
 
 	IEnumerator delay() {
 		yield return new WaitForSeconds(timeDelay);
-		if (index < lights.Length) {
+		if (index < lights.Length-1) {
 			lights [index].SetActive (true);
 
 			AudioSource audio = GetComponent<AudioSource> ();

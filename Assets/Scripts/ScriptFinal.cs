@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ScriptFinal : MonoBehaviour {
 
-    float contador;
-    bool final = false;
-
-
     private void Update()
     {
         

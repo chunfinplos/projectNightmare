@@ -6,6 +6,7 @@ public class RoomManager : MonoBehaviour {
 
     public GameObject estatua;
     public GameObject luz;
+
     public static bool MusicaCompleto, MagnetismoCompleto, LuzCompleto;
     
     // Use this for initialization
