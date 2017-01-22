@@ -14,7 +14,7 @@ public class MouseAction : MonoBehaviour {
 
     GrabbableItem gi;
 
-    void FixedUpdate()
+    void Update()
     {
         RaycastHit hit;
 
@@ -57,16 +57,15 @@ public class MouseAction : MonoBehaviour {
                             ps.Play();
                         }
 
-                        /*DoorScript ds = hit.collider.gameObject.GetComponent<DoorScript>();
+                        DestroyAlf da = hit.collider.gameObject.GetComponent<DestroyAlf>();
 
-                        if (ds != null)
-                            ds.Move();*/
+                        if (da != null)
+                            da.DestroyAlfo();
 
                         LightOneScript los = hit.collider.gameObject.GetComponent<LightOneScript>();
 
                         if (los != null)
-                            los.DestroyAlf();
-                      
+                            los.turnLight();
 
                     }
                 }
