@@ -12,6 +12,6 @@ public class ScriptButtonsMenu : MonoBehaviour {
 
     public void jugar()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainFinalScene");
     }
 }

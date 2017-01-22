@@ -9,16 +9,17 @@ public class LightOneScript : MonoBehaviour {
     GameObject lightGameObject;
     Light lightComp;
 
-    public Vector3 position;
     public Color color;
+    public float intensity = 1;
 
     private void Start()
     {
         lightGameObject = new GameObject("Luz");
         lightComp = lightGameObject.AddComponent<Light>();
         lightComp.color = color;
-        lightGameObject.transform.position = position;
-        lightComp.enabled = false;
+        lightGameObject.transform.position = gameObject.transform.position;
+        lightComp.enabled = on;
+        lightComp.intensity = intensity;
     }
 
     public void turnLight()

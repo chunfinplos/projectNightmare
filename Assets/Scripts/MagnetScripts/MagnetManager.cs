@@ -19,6 +19,12 @@ public class MagnetManager : MonoBehaviour {
 
     private Vector3 resta;
 
+    private float contador = 0;
+
+    public GameObject player;
+
+    private bool completo = false;
+
 	[SerializeField]
 	Text estadoImanes;
 
@@ -129,8 +135,23 @@ public class MagnetManager : MonoBehaviour {
             {
                 Destroy(bol);
 				estadoImanes.text = "";
-				Fade fade = GetComponent<Fade> ();
-				fade.StartFade();
+                completo = true;
+
+                if (completo)
+                {
+                    Fade fade = GetComponent<Fade>();
+                    fade.StartFade();
+                    
+                    
+                    contador += Time.deltaTime;
+                    if (contador >= fade.aFadeInTime)
+                    {
+                        RoomManager.MagnetismoCompleto = true;
+                        player.transform.position = new Vector3(-0.14f, 0.75f, 0.38f);
+                        completo = false;
+                    }
+
+                }
             }
         }
     }

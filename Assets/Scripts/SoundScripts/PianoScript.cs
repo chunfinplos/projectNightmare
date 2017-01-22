@@ -4,33 +4,47 @@ using UnityEngine;
 
 public class PianoScript : MonoBehaviour {
 
-
-    private bool playing = false;
-
-    /*public AudioClip sound1;
-    public AudioClip sound2;
-    public AudioClip sound3;
-    public AudioClip sound4;
-    public AudioClip sound5;*/
-
-
+    public GameObject player;
     public AudioSource source;
     public AudioClip [] clips = new AudioClip[5];
     public AudioClip failClip;
     public AudioClip finalClip;
 
+    private bool playing = false;
     private bool[] results = new bool[5];
     private string[] esperados = new string[5];
-
     private bool destino;
+
+    private float contador;
+    private Fade fade;
+
 
     private void Start()
     {
+        contador = 0;
+        fade = GetComponent<Fade>();
+
         esperados[0] = "rey";
         esperados[1] = "caballo";
         esperados[2] = "torre";
         esperados[3] = "reina";
         esperados[4] = "rey";
+    }
+
+    private void Update()
+    {
+        if(destino && RoomManager.MusicaCompleto == false)
+        {
+            contador += Time.deltaTime;
+            if(contador>= fade.aFadeInTime)
+            {
+                //source.clip = finalClip; //CAMBIAR POR CANCION ORIGINAL DEL JUEGO
+                //source.Play();
+
+                RoomManager.MusicaCompleto = true;
+                player.transform.position = new Vector3(-0.14f, 0.75f, 0.38f);
+            }
+        }
     }
 
     public void Play()
@@ -58,8 +72,6 @@ public class PianoScript : MonoBehaviour {
 
             }
 
-            
-
             destino = true;
             for(int i = 0; i < 5; i++)
             {
@@ -72,7 +84,6 @@ public class PianoScript : MonoBehaviour {
             if (destino == true)
             {
                 Debug.Log("CONGRATULATIONS");
-				Fade fade = GetComponent<Fade> ();
 				fade.StartFade ();
 
                 source.clip = finalClip;

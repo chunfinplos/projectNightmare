@@ -13,5 +13,6 @@ public class planoAstralScript : MonoBehaviour {
     private void OnTriggerStay(Collider other)
     {
         other.transform.position = new Vector3(-0.14f, 0.75f, 0.38f);
+        other.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 }
