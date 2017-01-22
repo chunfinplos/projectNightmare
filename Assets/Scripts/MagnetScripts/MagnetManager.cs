@@ -45,6 +45,8 @@ public class MagnetManager : MonoBehaviour {
     [SerializeField]
     private int i = 0, j;
 
+    private Fade fade;
+
     public bool BolaEnMovimiento
     {
         get
@@ -60,6 +62,7 @@ public class MagnetManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        fade = GetComponent<Fade>();
         posCorrectas[0] = 0;
         posCorrectas[1] = 3;
         posCorrectas[2] = 1;
@@ -139,10 +142,10 @@ public class MagnetManager : MonoBehaviour {
 
                 if (completo)
                 {
-                    Fade fade = GetComponent<Fade>();
-                    fade.StartFade();
+                    if(contador == 0)
+                        fade.StartFade();
                     
-                    
+
                     contador += Time.deltaTime;
                     if (contador >= fade.aFadeInTime)
                     {
