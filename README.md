@@ -1,2 +1,2 @@
 # projectNightmare
-First person video game of puzzles and horror. Developed in the Global Game Jam of 2017 in Madrid
+First person video game of puzzles and horror. Developed in the 2017 Global Game Jam  in Madrid
